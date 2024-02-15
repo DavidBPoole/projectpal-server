@@ -1,0 +1,26 @@
+[
+  {
+      "model": "projectpalapi.task",
+      "pk": 1,
+      "fields": {
+          "project": 1,
+          "name": "Task 1",
+          "description": "Complete work assignment",
+          "due_date": "2024-02-28",
+          "priority": "High",
+          "status": "In Progress"
+      }
+  },
+  {
+      "model": "projectpalapi.task",
+      "pk": 2,
+      "fields": {
+          "project": 2,
+          "name": "Task 2",
+          "description": "Plan weekend getaway",
+          "due_date": "2024-03-10",
+          "priority": "Medium",
+          "status": "Pending"
+      }
+  }
+]
