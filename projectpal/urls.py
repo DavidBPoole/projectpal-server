@@ -15,7 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include
+from rest_framework import routers
+from projectpalapi.views import check_user, register_user, UserView, ProjectView, TaskView, CategoryView, TaskCategoryView
+
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'users', UserView, 'user')
+router.register(r'projects', ProjectView, 'project')
+router.register(r'tasks', TaskView, 'task')
+router.register(r'categories', CategoryView, 'category')
+router.register(r'taskcategories', TaskCategoryView, 'taskcategory')
 
 urlpatterns = [
+    path('', include(router.urls)),
     path('admin/', admin.site.urls),
+    path('checkuser', check_user),
+    path('register', register_user),
 ]

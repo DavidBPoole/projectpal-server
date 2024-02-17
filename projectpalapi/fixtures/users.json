@@ -4,7 +4,7 @@
       "pk": 1,
       "fields": {
           "name": "David Default",
-          "firebase_uid": "abc123"
+          "uid": "abc123"
       }
   },
   {
@@ -12,7 +12,7 @@
       "pk": 2,
       "fields": {
           "name": "John Doe",
-          "firebase_uid": "def456"
+          "uid": "def456"
       }
   }
 ]
