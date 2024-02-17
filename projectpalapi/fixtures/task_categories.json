@@ -1,0 +1,26 @@
+[
+  {
+      "model": "projectpalapi.taskcategory",
+      "pk": 1,
+      "fields": {
+          "task": 1,
+          "category": 1
+      }
+  },
+  {
+      "model": "projectpalapi.taskcategory",
+      "pk": 2,
+      "fields": {
+          "task": 1,
+          "category": 2
+      }
+  },
+  {
+      "model": "projectpalapi.taskcategory",
+      "pk": 3,
+      "fields": {
+          "task": 2,
+          "category": 3
+      }
+  }
+]

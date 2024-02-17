@@ -1,0 +1,18 @@
+[
+  {
+      "model": "projectpalapi.user",
+      "pk": 1,
+      "fields": {
+          "name": "David Default",
+          "firebase_uid": "abc123"
+      }
+  },
+  {
+      "model": "projectpalapi.user",
+      "pk": 2,
+      "fields": {
+          "name": "John Doe",
+          "firebase_uid": "def456"
+      }
+  }
+]

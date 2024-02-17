@@ -1,0 +1,35 @@
+[
+  {
+      "model": "projectpalapi.project",
+      "pk": 1,
+      "fields": {
+          "user": 1,
+          "name": "Project 1",
+          "description": "Work-related project",
+          "due_date": "2024-02-28",
+          "status": "In Progress"
+      }
+  },
+  {
+      "model": "projectpalapi.project",
+      "pk": 2,
+      "fields": {
+          "user": 2,
+          "name": "Project 2",
+          "description": "Personal project",
+          "due_date": "2024-03-15",
+          "status": "Pending"
+      }
+  },
+  {
+    "model": "projectpalapi.project",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "name": "Project 3",
+        "description": "Personal project",
+        "due_date": "2024-03-15",
+        "status": "Completed"
+    }
+}
+]

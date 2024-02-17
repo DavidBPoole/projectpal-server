@@ -1,0 +1,23 @@
+[
+  {
+      "model": "projectpalapi.category",
+      "pk": 1,
+      "fields": {
+          "name": "Work"
+      }
+  },
+  {
+      "model": "projectpalapi.category",
+      "pk": 2,
+      "fields": {
+          "name": "Personal"
+      }
+  },
+  {
+      "model": "projectpalapi.category",
+      "pk": 3,
+      "fields": {
+          "name": "Home"
+      }
+  }
+]
