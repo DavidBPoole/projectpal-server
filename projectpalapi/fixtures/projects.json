@@ -14,7 +14,7 @@
       "model": "projectpalapi.project",
       "pk": 2,
       "fields": {
-          "user": 2,
+          "user": 1,
           "name": "Project 2",
           "description": "Personal project",
           "due_date": "2024-03-15",
