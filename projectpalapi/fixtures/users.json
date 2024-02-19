@@ -3,16 +3,16 @@
       "model": "projectpalapi.user",
       "pk": 1,
       "fields": {
-          "name": "David Default",
-          "uid": "abc123"
+          "name": "David Poole",
+          "uid": "kJrIsTHODfchnW0vTzpAS1EHtP42"
       }
   },
   {
       "model": "projectpalapi.user",
       "pk": 2,
       "fields": {
-          "name": "John Doe",
-          "uid": "def456"
+          "name": "David Alt Account",
+          "uid": "4hQ5sJUfPBS3LlIIXK0nevAFVXc2"
       }
   }
 ]
