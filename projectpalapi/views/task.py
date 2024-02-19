@@ -17,6 +17,17 @@ class TaskView(ViewSet):
             return Response(serializer.data)
         except Exception as e:
             return Response({'message': f'An error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+    # def list(self, request):
+    #     """Handle GET requests to get all tasks.
+    #     Returns: Response -- JSON serialized list of tasks"""
+    #     try:
+    #         project_id = self.request.query_params.get('project')
+    #         tasks = Task.objects.filter(project=project_id)
+    #         serializer = TaskSerializer(tasks, many=True)
+    #         return Response(serializer.data)
+    #     except Exception as e:
+    #         return Response({'message': f'An error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     def retrieve(self, request, pk):
         """Handle GET requests for single task.
