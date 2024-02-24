@@ -8,11 +8,25 @@ from .task_category import TaskCategory, TaskCategorySerializer
 class TaskView(ViewSet):
     """Task View"""
 
+    # def list(self, request):
+    #     """Handle GET requests to get all tasks.
+    #     Returns: Response -- JSON serialized list of tasks"""
+    #     try:
+    #         tasks = Task.objects.all()
+    #         serializer = TaskSerializer(tasks, many=True)
+    #         return Response(serializer.data)
+    #     except Exception as e:
+    #         return Response({'message': f'An error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
     def list(self, request):
-        """Handle GET requests to get all tasks.
-        Returns: Response -- JSON serialized list of tasks"""
+        """Handle GET requests to get all tasks or filter by project."""
         try:
-            tasks = Task.objects.all()
+            project_id = request.query_params.get('project')
+            if project_id:
+                tasks = Task.objects.filter(project=project_id)
+            else:
+                tasks = Task.objects.all()
+
             serializer = TaskSerializer(tasks, many=True)
             return Response(serializer.data)
         except Exception as e:
@@ -45,6 +59,7 @@ class TaskView(ViewSet):
     def create(self, request):
         """Handle POST operations
         Returns Response -- JSON serialized task instance"""
+        print("Request Data:", request.data)
         try:
             project = Project.objects.get(pk=request.data["project"])
 
