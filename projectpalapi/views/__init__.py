@@ -3,4 +3,3 @@ from .user import UserView
 from .project import ProjectView
 from .task import TaskView
 from .category import CategoryView
-from .task_category import TaskCategoryView
