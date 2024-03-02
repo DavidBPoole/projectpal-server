@@ -51,7 +51,7 @@ Figma
 4. Select the Python Interpreter within your editor. Press the following commands to open the Command Palette, and select "Python: Select Interpreter:
   - ⌘SHIFTP (Mac)
   - CtrlSHIFTP (Windows)
-  You will be looking for the following format beginning with your project's name followed by a random string:
+  - You will be looking for the following format beginning with your project's name followed by a random string:
   <YOUR_FOLDER_NAME>-<RANDOM_STRING>
 
 5. Pylin Settings for Django
