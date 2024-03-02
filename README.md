@@ -70,23 +70,23 @@ Figma
 
 7. Configuring the Django Server
   Inside the .vscode folder, create a file namded "launch.json" and paste the follwing code into that file:
-  ```markdown
-      {
-  "version": "0.2.0",
-  "configurations": [
-      {
-          "name": "Python: Django",
-          "type": "debugpy",
-          "request": "launch",
-          "program": "${workspaceFolder}/manage.py",
-          "args": ["runserver"],
-          "django": true,
-          "autoReload":{
-              "enable": true
+      ```markdown
+          {
+      "version": "0.2.0",
+      "configurations": [
+          {
+              "name": "Python: Django",
+              "type": "debugpy",
+              "request": "launch",
+              "program": "${workspaceFolder}/manage.py",
+              "args": ["runserver"],
+              "django": true,
+              "autoReload":{
+                  "enable": true
+              }
           }
-      }
-  ]
-} ```
+      ]
+    } ```
 
 8. Run Server by inputting the following into your command line or simply use the run server shortcut provided via the launch.json file:
   ```python manage.py runserver```
