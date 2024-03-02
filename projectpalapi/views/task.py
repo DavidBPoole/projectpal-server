@@ -1,8 +1,8 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
+from django.db.models import Q
 from rest_framework import serializers, status
 from rest_framework.decorators import action
-from django.db import transaction
 from projectpalapi.models import Project, Task, Category, TaskCategory
 
 class TaskView(ViewSet):
@@ -16,6 +16,14 @@ class TaskView(ViewSet):
                 tasks = Task.objects.filter(project=project_id)
             else:
                 tasks = Task.objects.all()
+            keyword = request.query_params.get('keyword', None)
+            
+            if keyword:
+                tasks = tasks.filter(
+                    Q(name__icontains=keyword) |
+                    Q(priority__icontains=keyword) |
+                    Q(status__icontains=keyword)
+                )
 
             serializer = TaskSerializer(tasks, many=True)
             return Response(serializer.data)

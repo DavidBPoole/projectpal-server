@@ -54,5 +54,12 @@
     "fields": {
         "name": "Errand"
     }
+  },
+  {
+    "model": "projectpalapi.category",
+    "pk": 9,
+    "fields": {
+        "name": "School"
+    }
   }
 ]
