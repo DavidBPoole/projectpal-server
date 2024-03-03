@@ -38,11 +38,11 @@ Figma
 # Setup Instructions
 
 1. Set up a [Firebase](https://firebase.google.com/) project w/ authentication only.
-  - [Firebase Setup w/ Authentication instructional video](https://www.loom.com/share/163ffe1539bb482196efa713ed6231e9)
+    - [Firebase Setup w/ Authentication instructional video](https://www.loom.com/share/163ffe1539bb482196efa713ed6231e9)
 
 2. Clone Project Pal (projectpal-server) to your local drive and change to that directory:
-  - `git@github.com:DavidBPoole/projectpal-server.git`
-  - `cd projectpal-client`
+    - `git@github.com:DavidBPoole/projectpal-server.git`
+    - `cd projectpal-client`
 
 3. From the root direction, in your command line run the following:
 ```markdown
