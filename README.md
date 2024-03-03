@@ -49,10 +49,10 @@ Figma
     pipenv install django=='4.1.3' autopep8=='2.0.0' pylint=='2.15.5' djangorestframework=='3.14.0' django-cors-headers=='3.13.0' pylint-django=='2.5.3'
 ```
 4. Select the Python Interpreter within your editor. Press the following commands to open the Command Palette, and select "Python: Select Interpreter:
-  - ⌘SHIFTP (Mac)
-  - CtrlSHIFTP (Windows)
-  - You will be looking for the following format beginning with your project's name followed by a random string:
-  <YOUR_FOLDER_NAME>-<RANDOM_STRING>
+    - ⌘SHIFTP (Mac)
+    - CtrlSHIFTP (Windows)
+    - You will be looking for the following format beginning with your project's name followed by a random string:
+    <YOUR_FOLDER_NAME>-<RANDOM_STRING>
 
 5. Pylin Settings for Django
   There should now be a .vscode folder in your directory. If there is not one, create it. Create/open the settings.json file and add the following lines:
