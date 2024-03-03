@@ -86,9 +86,10 @@ Figma
               }
           }
       ]
-    } ```
+    }
+     ```
 
 8. Run Server by inputting the following into your command line or simply use the run server shortcut provided via the launch.json file:
   ```python manage.py runserver```
 
-  - Once the server is running, you may start the client side with ```npm run dev``` then open the port provided within the terminal.
+    - Once the server is running, you may start the client side with ```npm run dev``` then open the port provided within the terminal.
