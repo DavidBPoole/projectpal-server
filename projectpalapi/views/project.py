@@ -1,7 +1,6 @@
 from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
-from django.db.models import Q
 from rest_framework import serializers, status
 from projectpalapi.models import Project, User
 from .task import TaskSerializer
@@ -19,14 +18,6 @@ class ProjectView(ViewSet):
                 return Response({'message': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
 
             projects = Project.objects.filter(user__id=user_id)
-            keyword = request.query_params.get('keyword', None)
-
-            if keyword:
-                projects = projects.filter(
-                    Q(name__icontains=keyword) | 
-                    Q(due_date__icontains=keyword) | 
-                    Q(status__icontains=keyword)
-                )
 
             serializer = ProjectSerializer(projects, many=True)
             return Response(serializer.data)
