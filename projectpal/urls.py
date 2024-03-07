@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import include
 from rest_framework import routers
-from projectpalapi.views import check_user, register_user, UserView, ProjectView, TaskView, CategoryView
+from projectpalapi.views import check_user, register_user, UserView, ProjectView, TaskView, CategoryView, CollaboratorView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'users', UserView, 'user')
 router.register(r'projects', ProjectView, 'project')
 router.register(r'tasks', TaskView, 'task')
 router.register(r'categories', CategoryView, 'category')
+router.register(r'collaborators', CollaboratorView, 'collaborator')
 
 urlpatterns = [
     path('', include(router.urls)),
