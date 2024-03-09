@@ -60,7 +60,7 @@ Figma
       {
           "python.linting.pylintArgs": [
               "--load-plugins=pylint_django",
-              "--django-settings-module=brewbuddy.settings",
+              "--django-settings-module=projectpal.settings",
           ],
       }
   ```
