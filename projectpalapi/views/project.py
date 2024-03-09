@@ -2,7 +2,7 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from projectpalapi.models import Project, User, Collaborator
+from projectpalapi.models import Project, User
 from .task import TaskSerializer
 from .collaborator import CollaboratorSerializer
 
@@ -100,4 +100,4 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = ('id', 'user', 'name', 'description', 'due_date', 'status', 'tasks', 'collaborators')
-        depth = 2
+        depth = 1

@@ -111,14 +111,4 @@ class CollaboratorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Collaborator
         fields = ('id', 'user', 'project', 'is_owner')
-
-# class CollaboratorSerializer(serializers.ModelSerializer):
-#     """JSON serializer for BrewCategory"""
-#     id = serializers.ReadOnlyField(source='collaborator.id')
-#     user = serializers.ReadOnlyField(source='collaborator.name')
-#     project = serializers.ReadOnlyField(source='collaborator.name')
-#     is_owner = serializers.ReadOnlyField(source='collaborator.name')
-
-#     class Meta:
-#       model = Collaborator
-#       fields = ('id', 'user', 'project', 'is_owner')
+        depth = 1
