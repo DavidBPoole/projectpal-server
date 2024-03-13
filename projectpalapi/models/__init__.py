@@ -3,3 +3,4 @@ from .project import Project
 from .task import Task
 from .category import Category
 from .task_category import TaskCategory
+from .collaborator import Collaborator

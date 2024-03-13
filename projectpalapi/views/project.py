@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from projectpalapi.models import Project, User
 from .task import TaskSerializer
+from .collaborator import CollaboratorSerializer
 
 class ProjectView(ViewSet):
     """Project View"""
@@ -89,13 +90,14 @@ class ProjectView(ViewSet):
             return Response({'message': 'Project not found'}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             return Response({'message': f'An error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+              
 class ProjectSerializer(serializers.ModelSerializer):
-  """JSON serializer for projects"""
-  
-  tasks = TaskSerializer(many=True, read_only=True)
-  
-  class Meta:
-    model = Project
-    fields = ('id', 'user', 'name', 'description', 'due_date', 'status', 'tasks')
-    depth = 1
+    """JSON serializer for projects"""
+    
+    tasks = TaskSerializer(many=True, read_only=True)
+    collaborators = CollaboratorSerializer(many=True, read_only=True)
+    
+    class Meta:
+        model = Project
+        fields = ('id', 'user', 'name', 'description', 'due_date', 'status', 'tasks', 'collaborators')
+        depth = 1
