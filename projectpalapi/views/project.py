@@ -9,17 +9,35 @@ from .collaborator import CollaboratorSerializer
 class ProjectView(ViewSet):
     """Project View"""
     
+    # def list(self, request):
+    #     """Handle GET requests to get all projects for a specific user."""
+    #     try:
+    #         user_id = request.query_params.get('userId', None)
+
+    #         user = User.objects.filter(id=user_id).first()
+    #         if not user:
+    #             return Response({'message': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    #         projects = Project.objects.filter(user__id=user_id)
+
+    #         serializer = ProjectSerializer(projects, many=True)
+    #         return Response(serializer.data)
+    #     except Exception as e:
+    #         return Response({'message': f'An error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
     def list(self, request):
-        """Handle GET requests to get all projects for a specific user."""
+        """Handle GET requests to get all projects or projects for a specific user."""
         try:
             user_id = request.query_params.get('userId', None)
+            if user_id:
+                user = User.objects.filter(id=user_id).first()
+                if not user:
+                    return Response({'message': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
 
-            user = User.objects.filter(id=user_id).first()
-            if not user:
-                return Response({'message': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
-
-            projects = Project.objects.filter(user__id=user_id)
-
+                projects = Project.objects.filter(user__id=user_id)
+            else:
+                projects = Project.objects.all()
+            
             serializer = ProjectSerializer(projects, many=True)
             return Response(serializer.data)
         except Exception as e:
