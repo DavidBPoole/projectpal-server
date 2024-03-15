@@ -31,9 +31,21 @@ class CollaboratorView(ViewSet):
             return Response({'message': 'Category not found'}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
             return Response({'message': f'An error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+    @action(detail=False, methods=['get'])
+    def is_collaborator(self, request):
+        """Checks if the user is a collaborator on a project."""
+        project_id = request.query_params.get('project_id')
+        user_id = request.query_params.get('user_id')
+
+        try:
+            is_collaborator = Collaborator.objects.filter(project_id=project_id, user_id=user_id).exists()
+            return Response({'is_collaborator': is_collaborator}, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'message': f'An error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
           
     @action(detail=True, methods=['post'])
-    def add_collaborator(self, request, pk=None):
+    def join_project(self, request, pk=None):
         """Add a collaborator to a project."""
         try:
             project = Project.objects.get(pk=pk)
@@ -61,7 +73,7 @@ class CollaboratorView(ViewSet):
     def leave_project(self, request, pk=None):
         """Allow a collaborator to leave a project."""
         try:
-            user = User.objects.get(pk=request.data["userId"])
+            user = User.objects.get(pk=request.data["user"])
             project = Project.objects.get(pk=pk)
 
             # Check if the user is the project owner
