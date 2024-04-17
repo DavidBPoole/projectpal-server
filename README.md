@@ -23,6 +23,7 @@ This application is designed to give users with busy schedules a way to quickly 
 - Category assignment of tasks
 - Ability to CRUD endless projects authenticated and unique to the user
 - Future feature to collaborate with other authenticated users on your projects
+- Ability to collaborate with other authenticated users on your projects
 
 # Relevant Links
 [Project Pal - Client](https://github.com/DavidBPoole/projectpal-client)
