@@ -25,6 +25,10 @@ This application is designed to give users with busy schedules a way to quickly 
 - Ability to collaborate with other authenticated users on your projects
 - Full control for project managers
 
+# Screens
+<img width="500" height="auto" alt="Screenshot 2024-04-05 at 10 27 10 PM" src="https://github.com/DavidBPoole/projectpal-server/assets/127453405/3d5e7613-8c57-45fa-bdb1-02e76e373d84">
+
+
 # Relevant Links
 [Project Pal - Client](https://github.com/DavidBPoole/projectpal-client)
 
