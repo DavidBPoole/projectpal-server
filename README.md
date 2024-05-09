@@ -23,7 +23,7 @@ This application is designed to give users with busy schedules a way to quickly 
 - Category assignment of tasks
 - Ability to CRUD endless projects authenticated and unique to the user
 - Ability to collaborate with other authenticated users on your projects
-- Full control for project managers
+- Full control for project managers with ability to manage roles and access to projects
 
 # Screens
 <img width="500" height="auto" alt="Screenshot 2024-04-05 at 10 27 10 PM" src="https://github.com/DavidBPoole/projectpal-server/assets/127453405/3d5e7613-8c57-45fa-bdb1-02e76e373d84">
